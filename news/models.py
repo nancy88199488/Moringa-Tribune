@@ -26,7 +26,7 @@ class Tags(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
-    editor = models.ForeignKey(Editor)
+    editor = models.ForeignKey(Editor,on_delete=models.CASCADE, )
     tags = models.ManyToManyField(Tags)
     pub_date = models.DateTimeField(auto_now_add=True)
 
@@ -41,4 +41,9 @@ class Article(models.Model):
     @classmethod
     def days_news(cls,date):
         news = cls.objects.filter(pub_date__date = date)
+        return news
+        
+    @classmethod
+    def search_by_title(cls,search_term):
+        news = cls.objects.filter(title__icontains=search_term)
         return news

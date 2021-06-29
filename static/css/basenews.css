@@ -1,5 +1,21 @@
+body{
+  font-family: 'Viaoda Libre', cursive;
+}
+
 h1
 {
   color: green;
-  font-family: 'Viaoda Libre', cursive;
+ 
+}
+
+nav{
+  color:rgb(29, 210, 20);
+  font-size: 25px;
+  font-weight: italic;
+  text-transform: uppercase;
+  text-align: center;
+}
+a 
+  a:hover{
+  color: #132d74;
 }
