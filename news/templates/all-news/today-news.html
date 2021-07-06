@@ -1,4 +1,5 @@
 {%extends 'all-news/base.html'%}
+{% load bootstrap3 %}
 {% block content %} 
 {{ block.super}}
 
@@ -25,6 +26,16 @@
     <h2 class="text-center" style="color:rgb(44, 100, 42);">There Is No News Items</h2>
   </div>
   {% endfor %}
+
+</div>
+<div class="container-fluid">
+
+  <form  action="{%url 'newsToday'%}" method="post">
+    {%csrf_token%}
+
+    {% bootstrap_form letterForm layout='inline' %}
+    <input type="submit" value="Subscribe">
+  </form>
 
 </div>
 
